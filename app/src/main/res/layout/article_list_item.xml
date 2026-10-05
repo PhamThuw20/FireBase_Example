@@ -30,21 +30,11 @@
         android:maxLines="2"
         android:ellipsize="end"
         android:textColor="#555555"
+        android:justificationMode="inter_word"
         app:layout_constraintEnd_toStartOf="@+id/ivCover"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tvTitle"
         tools:text="Content goes here... this is a placeholder for the article content which might be long." />
-
-    <TextView
-        android:id="@+id/tvViews"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:textColor="#888888"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvContent"
-        app:layout_constraintBottom_toBottomOf="parent"
-        tools:text="Views: 0" />
 
     <ImageView
         android:id="@+id/ivCover"

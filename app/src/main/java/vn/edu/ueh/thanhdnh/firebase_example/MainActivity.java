@@ -52,10 +52,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             String content = etContent.getText().toString();
             String imgCover = etImgCover.getText().toString();
             
-            // Lượt xem mặc định khi vừa tạo bài viết là 0
-            long viewCount = 0;
-            
-            Article article = new Article(title, content, imgCover, viewCount);
+            Article article = new Article(title, content, imgCover);
             
             // Add to "articles" collection
             db.collection("articles").add(article)

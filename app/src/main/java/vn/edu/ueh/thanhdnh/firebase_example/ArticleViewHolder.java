@@ -10,13 +10,11 @@ public class ArticleViewHolder extends RecyclerView.ViewHolder {
     ImageView imgCover;
     TextView tvTitle;
     TextView tvContent;
-    TextView tvViewCount;
 
     public ArticleViewHolder(@NonNull View itemView) {
         super(itemView);
         imgCover = itemView.findViewById(R.id.ivCover);
         tvTitle = itemView.findViewById(R.id.tvTitle);
         tvContent = itemView.findViewById(R.id.tvContent);
-        tvViewCount = itemView.findViewById(R.id.tvViews);
     }
 }

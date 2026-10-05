@@ -14,25 +14,21 @@ public class ArticleDetailActivity extends AppCompatActivity {
 
         ImageView ivCover = findViewById(R.id.ivCoverDetail);
         TextView tvTitle = findViewById(R.id.tvTitleDetail);
-        TextView tvViews = findViewById(R.id.tvViewsDetail);
         TextView tvContent = findViewById(R.id.tvContentDetail);
 
         String title = getIntent().getStringExtra("title");
         String content = getIntent().getStringExtra("content");
         String imgCover = getIntent().getStringExtra("img_cover");
-        long views = getIntent().getLongExtra("view_count", 0);
 
         tvTitle.setText(title);
         tvContent.setText(content);
-        tvViews.setText("Lượt xem: " + views);
 
         if (imgCover != null && !imgCover.isEmpty()) {
-            int resourceId = getResources().getIdentifier(imgCover, "drawable", getPackageName());
-            if (resourceId != 0) {
-                ivCover.setImageResource(resourceId);
-            } else {
-                ivCover.setImageResource(android.R.drawable.ic_menu_gallery);
-            }
+            com.squareup.picasso.Picasso.get()
+                    .load(imgCover)
+                    .placeholder(android.R.drawable.ic_menu_gallery)
+                    .error(android.R.drawable.ic_menu_gallery)
+                    .into(ivCover);
         }
     }
 }
